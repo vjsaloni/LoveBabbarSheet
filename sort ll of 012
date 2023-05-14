@@ -1,0 +1,45 @@
+ Node*Zerocount=0;
+        Node*Onecount=0;
+        Node*Twocount=0;
+        
+        Node*temp=head;
+        while(temp!=NULL)
+        {
+            if(temp->data==0)
+            {
+                Zerocount++;
+            }
+            else if(temp->data==1)
+            {
+                Onecount++;
+            }
+            else
+            {
+                Twocount++;
+            }
+            temp=temp->next;
+        }
+        
+        temp=head;
+        
+        while(temp!=NULL)
+        {
+            if(Zerocount!=0)
+            {
+                temp->data=0;
+                Zerocount--;
+            }
+            
+            else if(Onecount!=0)
+            {
+                temp->data=1;
+                Onecount--;
+            }
+            else if(Twocount!=0)
+            {
+                temp->data=2;
+                Twocount--;
+            }
+            temp=temp->next;
+        }
+        return head;
